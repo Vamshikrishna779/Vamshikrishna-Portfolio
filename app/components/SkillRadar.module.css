@@ -1,0 +1,74 @@
+.section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.chartContainer {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, var(--foreground), var(--text-secondary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.caption {
+    font-family: var(--font-mono);
+    text-align: center;
+    color: var(--text-secondary);
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.highlight {
+    color: var(--accent-primary);
+}
+
+.chartWrapper {
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    position: relative;
+    /* Removed border-radius 50% to prevent clipping of labels */
+    background: radial-gradient(circle at center, var(--card-bg) 0%, transparent 70%);
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 2rem 0.5rem;
+        /* Reduced from 4rem */
+        /* Reduce side padding to give chart more width */
+    }
+
+    .chartWrapper {
+        max-width: 340px;
+        /* Optimal reading size on mobile */
+    }
+
+    .title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        background: transparent;
+        color: var(--foreground);
+        -webkit-text-fill-color: currentColor;
+    }
+
+    .caption {
+        font-size: 0.8rem;
+        margin-top: 1.5rem;
+    }
+}

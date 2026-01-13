@@ -1,0 +1,117 @@
+.footer {
+    padding: 4rem 2rem;
+    background: var(--background);
+    /* Removed hardcoded dark gradient */
+    position: relative;
+    border-top: 1px solid var(--border);
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dock {
+    display: flex;
+    gap: 1.5rem;
+    background: var(--dock-bg);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    border: 1px solid var(--border);
+    backdrop-filter: blur(10px);
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 3rem 1.5rem;
+    }
+
+    .dock {
+        gap: 1rem;
+        padding: 0.8rem 1.5rem;
+        width: 100%;
+    }
+
+    .contactInfo {
+        font-size: 0.75rem;
+        padding: 0 1rem;
+    }
+}
+
+.dock:hover {
+    border-color: var(--accent-primary);
+    box-shadow: var(--glow-subtle);
+}
+
+.dockItem {
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.dockItem:hover {
+    color: var(--foreground);
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+.contactInfo {
+    font-family: var(--font-mono);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+    opacity: 0.7;
+}
+
+.line {
+    width: 50px;
+    height: 2px;
+    background: var(--border);
+    margin-bottom: 2rem;
+}
+
+.tagline {
+    font-family: var(--font-mono);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 3rem;
+}
+
+.highlight {
+    color: var(--foreground);
+    font-weight: 600;
+}
+
+.scrollTop {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.scrollTop:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    transform: translateY(-3px);
+}

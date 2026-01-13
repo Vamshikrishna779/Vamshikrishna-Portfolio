@@ -1,0 +1,212 @@
+.hero {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem;
+    background-color: var(--background);
+    color: var(--foreground);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.gridBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: 0;
+    animation: gridMove 30s linear infinite;
+}
+
+@keyframes gridMove {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(50px);
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 0%, var(--background) 80%);
+    z-index: 1;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    text-align: left;
+    width: 100%;
+}
+
+.mainText h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.highlight {
+    color: var(--foreground);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.mainText h1 span:nth-child(2) {
+    color: var(--accent-blue);
+    text-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+}
+
+.mainText h1 span:nth-child(3) {
+    color: var(--accent-purple);
+    text-shadow: 0 0 20px rgba(189, 0, 255, 0.3);
+}
+
+.subText {
+    font-family: var(--font-mono);
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.badges {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.badge {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--accent-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.badge:hover {
+    border-color: var(--accent-primary);
+    box-shadow: var(--glow-subtle);
+}
+
+.actions {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.primaryButton {
+    background: var(--accent-primary);
+    color: #000;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.primaryButton:hover {
+    background: var(--foreground);
+    box-shadow: var(--glow-strong);
+}
+
+.secondaryButton {
+    background: transparent;
+    color: var(--foreground);
+    border: 1px solid var(--border);
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.secondaryButton:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+}
+
+.scrollIndicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 0 1.5rem;
+        height: auto;
+        min-height: 100vh;
+        padding-top: 6rem;
+        padding-bottom: 4rem;
+    }
+
+    .mainText h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .content {
+        text-align: left;
+        padding: 0;
+        width: 100%;
+    }
+
+    .badges {
+        justify-content: flex-start;
+        gap: 0.6rem;
+    }
+
+    .badge {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    .actions {
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .primaryButton,
+    .secondaryButton {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .subText {
+        font-size: 1rem;
+    }
+}
